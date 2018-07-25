@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!-- FORM VIEW EMPLEADO  PRIMERA VISTA  -->
+  <record id="tvp_empleado_view_form" model="ir.ui.view">
+    <field name="name">tvp.empleado.view.form</field>
+    <field name="model">tvp.empleado</field>
+    <field name="arch" type="xml">
+      <form string="Empleado">
+        <sheet>
+          <group>
+            <field name="rfc" placeholder="R.F.C"/>
+            <field name="nss"/>
+            <field name="nom_contacto"/>
+            <field name="tel_contacto"/>
+            <field name="fecha_ingreso"/>
+            <field name="antiguedad"/>
+            <field name="edad"/>
+            <field name="tipo_sangre"/>
+            <field name="num_empleado"/>
+            <field name="fecha_baja"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <!-- TREE VIEW EMPLEADO -->
+  <record id="tvp_empleado_view_tree" model="ir.ui.view">
+    <field name="name">tvp.empleado.view.tree</field>
+    <field name="model">tvp.empleado</field>
+    <field name="arch" type="xml">
+      <tree string="Empleado">
+        <field name="rfc"/>
+        <field name="num_empleado"/>
+        <field name="fecha_ingreso"/>
+      </tree>
+    </field>
+  </record>
+  <!-- ACTION DE EMPLEADO -->
+  <record id="tvp_empleado_action_form" model="ir.actions.act_window">
+    <field name="name">Empleado</field>
+    <field name="res_model">tvp.empleado</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Empleado</p>
+      <p>Llena los campos que se te solicitan...</p>
+    </field>
+  </record>
+
+<!-- DESARROLLO DE LA SEGUNDA VISTA QUE ES CONTRATO -->
+
+  <!-- FORM VIEW CONTRATO -->
+  <record id="tvp_contrato_view_form" model="ir.ui.view">
+    <field name="name">tvp.contrato.view.form</field>
+    <field name="model">tvp.contrato</field>
+    <field name="arch" type="xml">
+      <form string="Contrato">
+        <sheet>
+          <group>
+            <field name="activo"/>
+            <field name="meses_prestaciones"/>
+            <field name="sueldo_bruto_mensual"/>
+            <field name="sueldo_bruto_anual"/>
+            <field name="nivel_de_puesto"/>
+            <field name="base_anual"/>
+            <field name="compania_contratadora"/>
+            <field name="motivo"/>
+            <field name="porcentaje"/>
+            <field name="nuevo_sueldo"/>
+            <field name="monto_finiquito"/>
+            <field name="obs"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <!-- TREE VIEW CONTRATO -->
+  <record id="tvp_contrato_view_tree" model="ir.ui.view">
+    <field name="name">tvp.contrato.view.tree</field>
+    <field name="model">tvp.contrato</field>
+    <field name="arch" type="xml">
+      <tree string="Contrato">
+        <field name="activo"/>
+        <field name="sueldo_bruto_mensual"/>
+        <field name="compania_contratadora"/>
+        <field name="obs"/>
+      </tree>
+    </field>
+  </record>
+  <!-- ACTION DE CONTRATO -->
+  <record id="tvp_contrato_action_form" model="ir.actions.act_window">
+    <field name="name">Contrato</field>
+    <field name="res_model">tvp.contrato</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Contratos</p>
+      <p>Llena los campos que se te solicitan para los contratos...</p>
+    </field>
+  </record>
+
+  <!-- DESARROLLO DE LA TERCERA VISTA QUE ES ESCOLARIDAD -->
+
+  <!-- FORM VIEW ESCOLARIDAD -->
+  <record id="tvp_escolaridad_view_form" model="ir.ui.view">
+    <field name="name">tvp.escolaridad.view.form</field>
+    <field name="model">tvp.escolaridad</field>
+    <field name="arch" type="xml">
+      <form string="Escolaridad">
+        <sheet>
+          <group>
+            <field name="nombre"/>
+            <field name="empleado"/>
+            <field name="nivel_de_estudio"/>
+            <field name="estado_estudio"/>
+            <field name="nombre_escuela_estudio"/>
+            <field name="constancia_recibida" placeholder="¿Que documento acredita tu escolaridad.?"/>
+            <field name="notas"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <!-- TREE VIEW ESCOLARIDAD -->
+  <record id="tvp_escolaridad_view_tree" model="ir.ui.view">
+    <field name="name">tvp.escolaridad.view.tree</field>
+    <field name="model">tvp.escolaridad</field>
+    <field name="arch" type="xml">
+      <tree string="Escolaridad del empleado">
+        <field name="nombre"/>
+        <field name="empleado"/>
+        <field name="nivel_de_estudio"/>
+      </tree>
+    </field>
+  </record>
+  <!-- ACTION DE ESCOLARIDAD -->
+  <record id="tvp_escolaridad_action_form" model="ir.actions.act_window">
+    <field name="name">Escolaridad</field>
+    <field name="res_model">tvp.escolaridad</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Escolaridad</p>
+      <p>Llena los campos que se te solicitan para la escolaridad del empleado...</p>
+    </field>
+  </record>
+
+  <!-- DESARROLLO DE LA CUARTA VISTA QUE ES  SEGUROS VARIOS -->
+
+  <!-- FORM VIEW SEGUROS -->
+  <record id="tvp_seguros_view_form" model="ir.ui.view">
+    <field name="name">tvp.seguros.view.form</field>
+    <field name="model">tvp.seguros</field>
+    <field name="arch" type="xml">
+      <form string="Seguros">
+        <sheet>
+          <group>
+            <field name="activa"/>
+            <field name="clave"/>
+            <field name="empleado"/>
+            <field name="departamento"/>
+            <field name="puesto"/>
+            <field name="tipo_seguro"/>
+            <field name="tipo_moneda"/>
+            <field name="prima_neta"/>
+            <field name="vigencia"/>
+            <field name="fecha_ingreso"/>
+            <field name="fecha_vencimiento"/>
+            <field name="obs"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <!-- TREE VIEW SEGUROS -->
+  <record id="tvp_seguros_view_tree" model="ir.ui.view">
+    <field name="name">tvp.seguros.view.tree</field>
+    <field name="model">tvp.seguros</field>
+    <field name="arch" type="xml">
+      <tree string="Seguros varios">
+        <field name="activa"/>
+        <field name="clave"/>
+        <field name="empleado"/>
+        <field name="tipo_seguro"/>
+        <field name="fecha_vencimiento"/>
+        <field name="obs"/>
+      </tree>
+    </field>
+  </record>
+  <!-- ACTION DE SEGUROS -->
+  <record id="tvp_seguros_action_form" model="ir.actions.act_window">
+    <field name="name">Seguros varios</field>
+    <field name="res_model">tvp.seguros</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Seguros varios</p>
+      <p>Llena los campos que se te solicitan dependiendo el tipo de seguro...</p>
+    </field>
+  </record>
+
+  <!-- DESARROLLO DE LA QUINTA VISTA QUE ES  GAS -->
+
+  <!-- FORM VIEW GAS -->
+  <record id="tvp_gas_view_form" model="ir.ui.view">
+    <field name="name">tvp.gas.view.form</field>
+    <field name="model">tvp.gas</field>
+    <field name="arch" type="xml">
+      <form string="Vales de Gas">
+        <sheet>
+          <group>
+            <field name="activa"/>
+            <field name="num_tarjeta"/>
+            <field name="empleado"/>
+            <field name="departamento"/>
+            <field name="puesto"/>
+            <field name="monto_mensual"/>
+            <field name="proveedor"/>
+            <field name="obs"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <!-- TREE VIEW GAS -->
+  <record id="tvp_gas_view_tree" model="ir.ui.view">
+    <field name="name">tvp.gas.view.tree</field>
+    <field name="model">tvp.gas</field>
+    <field name="arch" type="xml">
+      <tree string="Vales de Gas">
+        <field name="activa"/>
+        <field name="num_tarjeta"/>
+        <field name="empleado"/>
+        <field name="monto_mensual"/>
+        <field name="obs"/>
+      </tree>
+    </field>
+  </record>
+  <!-- ACTION DE GAS -->
+  <record id="tvp_gas_action_form" model="ir.actions.act_window">
+    <field name="name">Vales de Gas</field>
+    <field name="res_model">tvp.gas</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Vales y/o Tarjetas de Gas</p>
+      <p>Llena los campos para crear tarjetas o vales de Gas...</p>
+    </field>
+  </record>
+
+  <!-- DESARROLLO DE LA SEXTA VISTA QUE ES  ZAVIC -->
+  <!-- FORM VIEW ZAVIC-->
+  <record id="tvp_gas_view_form" model="ir.ui.view">
+    <field name="name">tvp.zavic.view.form</field>
+    <field name="model">tvp.zavic</field>
+    <field name="arch" type="xml">
+      <form string="Test de R.H">
+        <sheet>
+          <group>
+            <field name="pregunta"/>
+            <field name="respuesta"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <!-- TREE VIEW ZAVIC -->
+  <record id="tvp_zavic_view_tree" model="ir.ui.view">
+    <field name="name">tvp.zavic.view.tree</field>
+    <field name="model">tvp.zavic</field>
+    <field name="arch" type="xml">
+      <tree string="Test de R.H">
+        <field name="pregunta"/>
+        <field name="respuesta"/>
+      </tree>
+    </field>
+  </record>
+  <!-- ACTION DE ZAVIC-->
+  <record id="tvp_zavic_action_form" model="ir.actions.act_window">
+    <field name="name">Test de R.H</field>
+    <field name="res_model">tvp.zavic</field>
+    <field name="view_mode">tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">Test de RH para evaluación</p>
+      <p>Selecciona la respuesta correcta de cada una de las preguntas...</p>
+    </field>
+  </record>
+
+
+  <!-- CREACION DEL MENU ROOT -->
+  <menuitem id="tvp_root_menu" name="TVPromo" sequence="1"/>
+  <!-- CREACION DE LOS SUBMENUS -->
+  <menuitem id="tvp_root_submenu" name="TVP Menú" sequence="1" parent="tvp_root_menu"/>
+  <!-- CREACION DEL ACTION DE CADA UNA DE LAS CLASES -->
+  <menuitem id="action_tvp_empleado" name="Empleados" sequence="1" parent="tvp_root_submenu" action="tvp_empleado_action_form"/>
+  <menuitem id="action_tvp_contrato" name="Contratos" sequence="2" parent="tvp_root_submenu" action="tvp_contrato_action_form"/>
+  <menuitem id="action_tvp_escolaridad" name="Escolaridad" sequence="3" parent="tvp_root_submenu" action="tvp_escolaridad_action_form"/>
+  <menuitem id="action_tvp_seguros" name="Seguros" sequence="4" parent="tvp_root_submenu" action="tvp_seguros_action_form"/>
+  <menuitem id="action_tvp_gas" name="" sequence="5" parent="tvp_root_submenu" action="tvp_gas_action_form"/>
+  <menuitem id="action_tvp_zavic" name="" sequence="6" parent="tvp_root_submenu" action="tvp_zavic_action_form"/>
+
+</odoo>
